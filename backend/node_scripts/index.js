@@ -13,8 +13,8 @@ function runScript(j1, j2) {
   return spawn("python", [
     "-u",
     path.join(__dirname, "..", "python_scripts", "compare.py"),
-    j1,
-    j2
+    JSON.stringify(j1),
+    JSON.stringify(j2)
   ]);
 }
 
