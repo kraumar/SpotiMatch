@@ -37,15 +37,24 @@ const App = () => {
 
   const getData = async () => {
     try {
-      const data = await axios.get(
+      const dataSpotify = await axios.get(
         "https://api.spotify.com/v1/me/top/artists?limit=50",
         {
           headers: { Authorization: "Bearer " + token }
         }
       );
 
-      console.log(JSON.stringify(data.data.items));
-      // setData(data);
+      // console.log(JSON.stringify(data.data.items));
+      // // setData(data);
+
+      const data = await axios.post("http://localhost:8888/run", {
+        data: {
+          json1: dataSpotify,
+          json2: dataSpotify
+        }
+      });
+
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
