@@ -49,8 +49,8 @@ const App = () => {
 
       const data = await axios.post("http://localhost:8888/run", {
         data: {
-          json1: dataSpotify,
-          json2: dataSpotify
+          json1: JSON.stringify(dataSpotify.data.items),
+          json2: JSON.stringify(dataSpotify.data.items)
         }
       });
 
