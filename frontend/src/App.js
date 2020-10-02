@@ -5,7 +5,11 @@ export const spotiAuthEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = "d72d75d93c8b4a45ba5f1910c5ba2f12";
 const redirectUri = "http://localhost:3000";
-const scopes = ["user-read-recently-played", "user-read-currently-playing"];
+const scopes = [
+  "user-read-recently-played",
+  "user-read-currently-playing",
+  "user-top-read"
+];
 
 // Get the hash of the url
 const hash = window.location.hash
@@ -25,7 +29,6 @@ const App = () => {
   // const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log("here");
     const token = hash.access_token;
     if (token) {
       setToken(token);
@@ -35,13 +38,13 @@ const App = () => {
   const getData = async () => {
     try {
       const data = await axios.get(
-        "https://api.spotify.com/v1/me/player/currently-playing",
+        "https://api.spotify.com/v1/me/top/artists?limit=50",
         {
           headers: { Authorization: "Bearer " + token }
         }
       );
 
-      console.log(data);
+      console.log(JSON.stringify(data.data.items));
       // setData(data);
     } catch (err) {
       console.log(err);
