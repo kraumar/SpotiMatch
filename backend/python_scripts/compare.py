@@ -3,6 +3,7 @@ import sys
 
 
 def load_users_data(json1, json2):
+	
 	data1 = pd.read_json(json1)
 	data2 = pd.read_json(json2)
 
@@ -38,27 +39,17 @@ def compare_dataframes(df1, df2):
 	return df1,score
     
 
-def read_in():
-
-	data1 = json.loads(sys.argv[1])
-	data2 = json.loads(sys.argv[2])
-
-	return data1, data2
-
-
 def main():
 
-	print("hello")
 
-	data1, data2 = read_in()
-	data1, data2 = load_users_data(data1, data2)
+	data1, data2 = load_users_data(sys.argv[1], sys.argv[2])
 
 	data_final, score = compare_dataframes(data1, data2)
 
 	result = data_final.to_json(orient="split")
 
 
-	print(json.dumps(result))
+	print(result)
 	print(score)
 
 
