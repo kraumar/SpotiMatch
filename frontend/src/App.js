@@ -54,7 +54,7 @@ const App = () => {
         }
       });
 
-      console.log(JSON.parse(data));
+      console.log(data.data);
     } catch (err) {
       console.log(err);
     }

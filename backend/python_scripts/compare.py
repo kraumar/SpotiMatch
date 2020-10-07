@@ -1,11 +1,12 @@
 import sys, json, numpy as np, pandas as pd
+from io import StringIO
 import sys
 
 
 def load_users_data(json1, json2):
 	
-	data1 = pd.read_json(json1)
-	data2 = pd.read_json(json2)
+	data1 = pd.read_json(StringIO(json1))
+	data2 = pd.read_json(StringIO(json2))
 
 	data1 = data1.dropna(subset=['name'])
 	data2 = data2.dropna(subset=['name'])
@@ -47,12 +48,11 @@ def main():
 	data_final, score = compare_dataframes(data1, data2)
 
 	result = data_final.to_json(orient="split")
-	result['score'] = str(score)
+	result = result[:-1]
+	result += ', "score": ' + str(score) + "}"
 
 	print(result)
 
 
 if __name__ == '__main__':
 	main()
-
-
