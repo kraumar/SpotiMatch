@@ -47,10 +47,9 @@ def main():
 	data_final, score = compare_dataframes(data1, data2)
 
 	result = data_final.to_json(orient="split")
-
+	result['score'] = str(score)
 
 	print(result)
-	print(score)
 
 
 if __name__ == '__main__':

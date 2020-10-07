@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22e6f6f4-df26-427d-be35-727890894563" name="Default Changelist" comment="" />
+    <list default="true" id="22e6f6f4-df26-427d-be35-727890894563" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../backend/python_scripts/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/python_scripts/compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fb_login-react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/fb_login-react/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fb_login-react/src/components/Facebook.js" beforeDir="false" afterPath="$PROJECT_DIR$/fb_login-react/src/components/Facebook.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602077126132</updated>
-      <workItem from="1602077127958" duration="498000" />
+      <workItem from="1602077127958" duration="2573000" />
     </task>
     <servers />
   </component>
@@ -68,5 +73,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1039" y="507" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602079812063">
+      <screen x="0" y="23" width="2560" height="1350" />
+    </state>
+    <state x="1039" y="507" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1350/2560.23.2560.1417@0.23.2560.1350" timestamp="1602079812063" />
   </component>
 </project>
