@@ -74,7 +74,7 @@ const App = () => {
       {chunk && (
         <div className="container">
           <CardsContainer items={chunk} />
-          <h1 class="display-3">Your score is: {chunk.score}</h1>
+          <h1 className="display-3">Your score is: {chunk.score}</h1>
         </div>
       )}
     </div>

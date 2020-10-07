@@ -2,7 +2,12 @@ import React from "react";
 
 const Card = ({ item }) => {
   return (
-    <div className="col">
+    <div
+      className="col"
+      onClick={() => {
+        window.open(item[1].spotify, "_blank");
+      }}
+    >
       <div className="card mb-3" style={{ width: "540px" }}>
         <div className="row no-gutters">
           <div className="col-md-4">
