@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import CardsContainer from "./components/CardsContainer";
+
 export const spotiAuthEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = "d72d75d93c8b4a45ba5f1910c5ba2f12";
@@ -26,7 +28,7 @@ window.location.hash = "";
 
 const App = () => {
   const [token, setToken] = useState(null);
-  // const [data, setData] = useState(null);
+  const [chunk, setChunk] = useState(null);
 
   useEffect(() => {
     const token = hash.access_token;
@@ -44,9 +46,6 @@ const App = () => {
         }
       );
 
-      // console.log(JSON.stringify(data.data.items));
-      // // setData(data);
-
       const data = await axios.post("http://localhost:8888/run", {
         data: {
           json1: dataSpotify,
@@ -54,7 +53,7 @@ const App = () => {
         }
       });
 
-      console.log(data.data);
+      setChunk(data.data);
     } catch (err) {
       console.log(err);
     }
@@ -72,6 +71,12 @@ const App = () => {
         </a>
       )}
       {token && <button onClick={getData}>GET DATA</button>}
+      {chunk && (
+        <div className="container">
+          <CardsContainer items={chunk} />
+          <h1 class="display-3">Your score is: {chunk.score}</h1>
+        </div>
+      )}
     </div>
   );
 };
