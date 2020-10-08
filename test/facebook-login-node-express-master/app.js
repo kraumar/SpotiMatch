@@ -41,10 +41,9 @@ passport.use(new FacebookStrategy({
         pool.query("SELECT * from user_info where user_id="+profile.id, (err,rows) => {
           if(err) throw err;
           if(rows && rows.length === 0) {
-              console.log("There is no such user, adding now");
-              pool.query("INSERT into user_info(user_id,user_name) VALUES('"+profile.id+"','"+profile.username+"')");
+              pool.query("INSERT into user_info(user_id) VALUES('" + profile.id + "')");
           } else {
-              console.log("User already exists in database");
+              
           }
         });
       }
